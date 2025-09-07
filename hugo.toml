@@ -1,0 +1,49 @@
+title = "Minimal"
+theme = "github.com/ZhongRuoyu/hugo-minimal"
+baseURL = "https://hugo-minimal.ruoyu.io/"
+languageCode = "en-US"
+enableRobotsTXT = true
+
+[module]
+[[module.imports]]
+path = "github.com/ZhongRuoyu/hugo-minimal"
+
+[params]
+description = "A minimalist Hugo blog theme."
+author = "Ruoyu Zhong"
+dateFormat = "January 2, 2006"
+copyright = "Copyright &copy; 2022 &ndash; 2025 Ruoyu Zhong."
+
+[menus]
+[[menus.main]]
+name = "Home"
+pageRef = "/"
+weight = 10
+[[menus.main]]
+name = "Blog"
+pageRef = "/blog"
+weight = 20
+[[menus.main]]
+name = "Projects"
+pageRef = "/projects"
+weight = 30
+[[menus.main]]
+name = "About"
+pageRef = "/about"
+weight = 40
+
+[[params.favicon]]
+rel = "apple-touch-icon"
+type = "image/png"
+sizes = "180x180"
+href = "assets/images/favicon/apple-touch-icon.png"
+[[params.favicon]]
+rel = "icon"
+type = "image/png"
+sizes = "32x32"
+href = "assets/images/favicon/favicon-32x32.png"
+[[params.favicon]]
+rel = "icon"
+type = "image/png"
+sizes = "16x16"
+href = "assets/images/favicon/favicon-16x16.png"
