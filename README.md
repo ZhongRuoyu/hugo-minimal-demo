@@ -4,7 +4,7 @@ This is the demo site for
 [the Minimal theme](https://github.com/ZhongRuoyu/hugo-minimal) for
 [Hugo](https://gohugo.io/).
 
-It can be accessed at <https://hugo-minimal.ruoyu.io/>.
+It can be accessed at <https://minimal.ruoyu.io/>.
 
 ## License
 

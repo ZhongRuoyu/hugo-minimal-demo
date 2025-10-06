@@ -1,6 +1,6 @@
 title = "Minimal"
 theme = "minimal"
-baseURL = "https://hugo-minimal.ruoyu.io/"
+baseURL = "https://minimal.ruoyu.io/"
 languageCode = "en-US"
 enableRobotsTXT = true
 
