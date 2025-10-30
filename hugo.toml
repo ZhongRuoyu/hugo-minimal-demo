@@ -2,7 +2,9 @@ title = "Minimal"
 theme = "minimal"
 baseURL = "https://minimal.ruoyu.io/"
 languageCode = "en-US"
+
 enableRobotsTXT = true
+disableHugoGeneratorInject = true
 
 [params]
 description = "A minimalist Hugo blog theme."
