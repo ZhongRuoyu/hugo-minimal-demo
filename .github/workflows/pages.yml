@@ -7,7 +7,6 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -37,7 +36,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
       - name: Build with Hugo
         run: |
-          hugo --minify --baseURL "$PAGES_BASE_URL/"
+          hugo --minify --baseURL "$PAGES_BASE_URL"
         env:
           PAGES_BASE_URL: ${{ steps.pages.outputs.base_url }}
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
@@ -49,7 +48,7 @@ jobs:
 
   deploy:
     needs: build
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       contents: read
