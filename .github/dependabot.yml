@@ -3,15 +3,18 @@ version: 2
 updates:
   - package-ecosystem: github-actions
     directory: /
+    allow:
+      - dependency-type: all
     schedule:
       interval: weekly
     groups:
       github-actions:
         patterns:
           - "*"
-
   - package-ecosystem: gitsubmodule
     directory: /
+    allow:
+      - dependency-type: all
     schedule:
       interval: weekly
     groups:
