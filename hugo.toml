@@ -1,7 +1,6 @@
 title = "Minimal"
 theme = "minimal"
 baseURL = "https://minimal.ruoyu.io/"
-languageCode = "en-US"
 
 enableRobotsTXT = true
 disableHugoGeneratorInject = true
@@ -11,6 +10,10 @@ description = "A minimalist Hugo blog theme."
 author = "Ruoyu Zhong"
 dateFormat = "January 2, 2006"
 copyright = "Copyright &copy; 2022 &ndash; 2025 Ruoyu Zhong."
+
+[languages]
+[languages.en]
+locale = "en-US"
 
 [menus]
 [[menus.main]]
