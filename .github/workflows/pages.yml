@@ -12,12 +12,19 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
+permissions: {}
+
+defaults:
+  run:
+    shell: bash -euxo pipefail {0}
+
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      pages: read
+      pages: read # for extracting GitHub Pages metadata
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -47,13 +54,14 @@ jobs:
           path: ./public
 
   deploy:
+    name: Deploy
     needs: build
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      pages: write
-      id-token: write
+      id-token: write # for verifying deployment identity
+      pages: write # for deploying to GitHub Pages
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
